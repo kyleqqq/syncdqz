@@ -31,7 +31,6 @@ jobs:
         git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
 
     - name: Pull Master
-      uses: actions/checkout@v2
       uses: repo-sync/pull-request@v2
       with:
         destination_branch: master
@@ -45,7 +44,6 @@ jobs:
         branch: master
 
     - name: Pull Main
-      uses: actions/checkout@v2
       uses: repo-sync/pull-request@v2
       with:
         destination_branch: main
