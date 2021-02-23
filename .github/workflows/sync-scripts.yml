@@ -30,24 +30,13 @@ jobs:
       run: |
         git clone -b master git@gitee.com:lxk0301/jd_scripts.git master
 
-    - name: Pull Master
-      uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: master
-        github_token: ${{ secrets.PAT }}
-
     - name: Push Master
       uses: ad-m/github-push-action@master
       with:
         directory: master
         github_token: ${{ secrets.PAT }}
         branch: master
-
-    - name: Pull Main
-      uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: main
-        github_token: ${{ secrets.PAT }}
+        force: true
 
     - name: Clone Main
       run: |
@@ -59,3 +48,4 @@ jobs:
         directory: main
         github_token: ${{ secrets.PAT }}
         branch: main
+        force: true
